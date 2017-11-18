@@ -91,7 +91,7 @@ class StatusMenuController: NSObject {
         statusItem.menu!.item(at: count - 3)?.isHidden = false // Clear
         
         for session in sessions.getAll() {
-            let newItem : NSMenuItem = NSMenuItem(title: "\(session.duration)", action: nil, keyEquivalent: "")
+            let newItem = NSMenuItem(title: session.title(), action: nil, keyEquivalent: "")
             newItem.isEnabled = false
             statusItem.menu?.insertItem(newItem, at: 4)
         }

@@ -10,13 +10,18 @@ import Foundation
 
 extension TimeInterval {
     
-    func format() -> String? {
+    func format() -> String {
         let formatter = DateComponentsFormatter()
 
         formatter.allowedUnits = [.hour, .minute, .second]
         formatter.unitsStyle = .positional
         formatter.zeroFormattingBehavior = .pad
-
-        return formatter.string(from: self)
+        
+        if let formatedTimeInterval = formatter.string(from: self) {
+            return formatedTimeInterval
+        }
+        
+        return ""
     }
+    
 }

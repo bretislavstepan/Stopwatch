@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA4AD4EF1FC0CDE300CEA968 /* SessionMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AD4EE1FC0CDE300CEA968 /* SessionMO.swift */; };
 		BAB5643F1FBD94BF0020A5FA /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5643E1FBD94BF0020A5FA /* Sessions.swift */; };
 		BADE309B1FBB77E700977F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE309A1FBB77E700977F2C /* AppDelegate.swift */; };
 		BADE309E1FBB77E700977F2C /* Stopwatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BADE309C1FBB77E700977F2C /* Stopwatch.xcdatamodeld */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA4AD4EE1FC0CDE300CEA968 /* SessionMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMO.swift; sourceTree = "<group>"; };
 		BAB5643E1FBD94BF0020A5FA /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		BADE30971FBB77E700977F2C /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADE309A1FBB77E700977F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				BADE30A51FBB77E700977F2C /* Stopwatch.entitlements */,
 				BADE309C1FBB77E700977F2C /* Stopwatch.xcdatamodeld */,
 				BAFF49B91FBCE10C009E8F3C /* TimeInterval.swift */,
+				BA4AD4EE1FC0CDE300CEA968 /* SessionMO.swift */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4AD4EF1FC0CDE300CEA968 /* SessionMO.swift in Sources */,
 				BADE30BA1FBB8D3700977F2C /* StatusMenuController.swift in Sources */,
 				BAFF49BA1FBCE10C009E8F3C /* TimeInterval.swift in Sources */,
 				BAB5643F1FBD94BF0020A5FA /* Sessions.swift in Sources */,
