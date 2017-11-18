@@ -10,19 +10,49 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Stopwatch" customModuleProvider="target">
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Stopwatch" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="Mh4-7D-t31" customClass="StatusMenuController" customModule="Stopwatch" customModuleProvider="target">
             <connections>
-                <outlet property="statusMenu" destination="lOW-Tf-njT" id="sL6-Dc-NYg"/>
+                <outlet property="clearMenuItem" destination="a11-CC-2Y1" id="GJ2-c0-Z3b"/>
+                <outlet property="finishMenuItem" destination="2Ae-PP-c7O" id="eKi-Rp-d7H"/>
+                <outlet property="startMenuItem" destination="VcE-7O-tEJ" id="SC5-JQ-g81"/>
+                <outlet property="statusMenu" destination="lOW-Tf-njT" id="Rq0-ZS-aiB"/>
             </connections>
         </customObject>
-        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <menu id="lOW-Tf-njT">
+        <menu autoenablesItems="NO" id="lOW-Tf-njT">
             <items>
+                <menuItem title="Start" id="VcE-7O-tEJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggle:" target="Mh4-7D-t31" id="eve-P6-qpd"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Reset" id="iUV-6H-nJD">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="reset:" target="Mh4-7D-t31" id="jD6-7E-pEP"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Finish" id="2Ae-PP-c7O">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="finish:" target="Mh4-7D-t31" id="KEF-s7-Enl"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" hidden="YES" id="SHT-qo-tWE"/>
+                <menuItem title="Clear" hidden="YES" id="a11-CC-2Y1">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clear:" target="Mh4-7D-t31" id="WBl-6l-Ty7"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="EiX-fA-K7A"/>
                 <menuItem title="Quit" id="7vg-dY-8Ae">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quit:" target="Voe-Tx-rLC" id="KBS-j3-ZaL"/>
+                        <action selector="quit:" target="Mh4-7D-t31" id="bnT-Vs-tY3"/>
                     </connections>
                 </menuItem>
             </items>

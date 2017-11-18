@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BAB5643F1FBD94BF0020A5FA /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5643E1FBD94BF0020A5FA /* Sessions.swift */; };
 		BADE309B1FBB77E700977F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE309A1FBB77E700977F2C /* AppDelegate.swift */; };
 		BADE309E1FBB77E700977F2C /* Stopwatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BADE309C1FBB77E700977F2C /* Stopwatch.xcdatamodeld */; };
 		BADE30A01FBB77E700977F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADE309F1FBB77E700977F2C /* Assets.xcassets */; };
 		BADE30A31FBB77E700977F2C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADE30A11FBB77E700977F2C /* MainMenu.xib */; };
 		BADE30AF1FBB77E700977F2C /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE30AE1FBB77E700977F2C /* StopwatchTests.swift */; };
+		BADE30BA1FBB8D3700977F2C /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE30B91FBB8D3700977F2C /* StatusMenuController.swift */; };
+		BAFF49B81FBB93A5009E8F3C /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF49B71FBB93A5009E8F3C /* Stopwatch.swift */; };
+		BAFF49BA1FBCE10C009E8F3C /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF49B91FBCE10C009E8F3C /* TimeInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BAB5643E1FBD94BF0020A5FA /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		BADE30971FBB77E700977F2C /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADE309A1FBB77E700977F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BADE309D1FBB77E700977F2C /* Stopwatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stopwatch.xcdatamodel; sourceTree = "<group>"; };
@@ -35,6 +40,9 @@
 		BADE30AA1FBB77E700977F2C /* StopwatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StopwatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADE30AE1FBB77E700977F2C /* StopwatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
 		BADE30B01FBB77E700977F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BADE30B91FBB8D3700977F2C /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		BAFF49B71FBB93A5009E8F3C /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		BAFF49B91FBCE10C009E8F3C /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +85,15 @@
 			isa = PBXGroup;
 			children = (
 				BADE309A1FBB77E700977F2C /* AppDelegate.swift */,
+				BADE30B91FBB8D3700977F2C /* StatusMenuController.swift */,
+				BAB5643E1FBD94BF0020A5FA /* Sessions.swift */,
+				BAFF49B71FBB93A5009E8F3C /* Stopwatch.swift */,
 				BADE309F1FBB77E700977F2C /* Assets.xcassets */,
 				BADE30A11FBB77E700977F2C /* MainMenu.xib */,
 				BADE30A41FBB77E700977F2C /* Info.plist */,
 				BADE30A51FBB77E700977F2C /* Stopwatch.entitlements */,
 				BADE309C1FBB77E700977F2C /* Stopwatch.xcdatamodeld */,
+				BAFF49B91FBCE10C009E8F3C /* TimeInterval.swift */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -197,8 +209,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BADE30BA1FBB8D3700977F2C /* StatusMenuController.swift in Sources */,
+				BAFF49BA1FBCE10C009E8F3C /* TimeInterval.swift in Sources */,
+				BAB5643F1FBD94BF0020A5FA /* Sessions.swift in Sources */,
 				BADE309B1FBB77E700977F2C /* AppDelegate.swift in Sources */,
 				BADE309E1FBB77E700977F2C /* Stopwatch.xcdatamodeld in Sources */,
+				BAFF49B81FBB93A5009E8F3C /* Stopwatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

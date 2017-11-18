@@ -10,6 +10,8 @@ import XCTest
 @testable import Stopwatch
 
 class StopwatchTests: XCTestCase {
+
+    let stopwatch = Stopwatch()
     
     override func setUp() {
         super.setUp()
@@ -21,7 +23,10 @@ class StopwatchTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testMeasuring() {
+        XCTAssertEqual(0, stopwatch.duration)
+        stopwatch.start();
+       
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
