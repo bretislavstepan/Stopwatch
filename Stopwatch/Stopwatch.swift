@@ -8,29 +8,37 @@
 
 import Cocoa
 
-@objcMembers class Stopwatch: NSObject {
+class Stopwatch: NSObject {
 
-    dynamic public private(set) var duration: TimeInterval = 0
+    private var duration: TimeInterval = 0
     
     public private(set) var isRunning = false
     
     private var timer = Timer()
     
+    private var startTime: Date?
+    
     func toggle() {
-        isRunning ? timer.invalidate() : scheduleTimer()
+        if isRunning {
+            duration -= startTime?.timeIntervalSinceNow ?? 0
+        }
+        else {
+            startTime = Date()
+        }
+
         isRunning = !isRunning
-    }
-    
-    private func scheduleTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-    }
-    
-    @objc internal func update() {
-        duration += 1
     }
 
     func reset() {
         duration = 0
+        startTime = Date()
+    }
+    
+    func getDuration() -> TimeInterval {
+        if isRunning {
+            return duration - (startTime?.timeIntervalSinceNow ?? 0)
+        }
+        return duration
     }
     
 }

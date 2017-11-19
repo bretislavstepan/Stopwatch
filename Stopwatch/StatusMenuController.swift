@@ -9,7 +9,7 @@
 import Cocoa
 import CoreData
 
-class StatusMenuController: NSObject {
+@objcMembers class StatusMenuController: NSObject {
 
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var finishMenuItem: NSMenuItem!
@@ -19,7 +19,7 @@ class StatusMenuController: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let stopwatch = Stopwatch()
     let numberOfItemsAfterLastSessionItem = 4
-    var observation: NSKeyValueObservation? = nil
+    var timer: Timer?
     var sessions: Sessions!
 
     override func awakeFromNib() {
@@ -27,16 +27,23 @@ class StatusMenuController: NSObject {
         let managedObjectContext = delegate.persistentContainer.viewContext
         sessions = Sessions(context: managedObjectContext)
         statusItem.menu = statusMenu
-        
-        observation = stopwatch.observe(\.duration, options: [.initial, .new, .old]) {
-            (stopwatch, change) in self.updateDisplay()
-        }
-        
+        updateDisplay()
         appendSessionsToMenuItems()
     }
     
     @IBAction func toggle(_ sender: NSMenuItem) {
         stopwatch.toggle()
+        updateDisplay()
+        if stopwatch.isRunning {
+
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateDisplay), userInfo: nil, repeats: true)
+        }
+        else {
+            if let timer = timer {
+                timer.invalidate()
+            }
+        }
+        
         enableMenuItems()
     }
     
@@ -51,7 +58,7 @@ class StatusMenuController: NSObject {
         
         let label = getLabel(title: "Stopwatch", question: "Enter session label:")
         
-        _ = sessions.create(date: Date(), duration: Float(stopwatch.duration), label: label)
+        _ = sessions.create(date: Date(), duration: Float(stopwatch.getDuration()), label: label)
         sessions.saveChanges()
         appendSessionsToMenuItems()
         stopwatch.reset()
@@ -69,15 +76,15 @@ class StatusMenuController: NSObject {
         NSApplication.shared.terminate(self)
     }
     
-    func updateDisplay() {
-        statusItem.title = stopwatch.duration.format()
+    @objc func updateDisplay() {
+        statusItem.title = stopwatch.getDuration().format()
         enableMenuItems()
     }
     
     private func enableMenuItems() {
-        finishMenuItem.isEnabled = stopwatch.duration > 0
+        finishMenuItem.isEnabled = stopwatch.getDuration() > 0
         startMenuItem.title = stopwatch.isRunning ? "Pause" :
-            stopwatch.duration == 0 ? "Start" : "Continue"
+            stopwatch.getDuration() == 0 ? "Start" : "Continue"
     }
     
     private func appendSessionsToMenuItems() {
