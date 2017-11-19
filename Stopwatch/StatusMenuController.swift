@@ -48,8 +48,10 @@ class StatusMenuController: NSObject {
         if stopwatch.isRunning {
             stopwatch.toggle()
         }
-
-        _ = sessions.create(date: Date(), duration: Float(stopwatch.duration), label: "")
+        
+        let label = getLabel(title: "Stopwatch", question: "Enter session label:")
+        
+        _ = sessions.create(date: Date(), duration: Float(stopwatch.duration), label: label)
         sessions.saveChanges()
         appendSessionsToMenuItems()
         stopwatch.reset()
@@ -109,10 +111,27 @@ class StatusMenuController: NSObject {
             return
         }
         
-        for i in (4 ... count) {
+        for i in (4 ... count).reversed() {
             statusItem.menu?.removeItem(at: i)
         }
     }
 
+    private func getLabel(title: String, question: String) -> String {
+        let msg = NSAlert()
+        msg.addButton(withTitle: "OK")      // 1st button
+        msg.messageText = title
+        msg.informativeText = question
+        
+        let txt = NSTextField(frame: NSRect(x: 0, y: 0, width: 200, height: 24))
+        
+        msg.accessoryView = txt
+        let response: NSApplication.ModalResponse = msg.runModal()
+        
+        if (response == NSApplication.ModalResponse.alertFirstButtonReturn) {
+            return txt.stringValue
+        } else {
+            return ""
+        }
+    }
 
 }
