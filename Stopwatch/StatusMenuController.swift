@@ -98,8 +98,7 @@ import CoreData
         
         statusItem.menu!.item(at: 3)?.isHidden = false // separator
         statusItem.menu!.item(at: count - 3)?.isHidden = false // Clear
-        statusItem.menu!.item(at: count - 4)?.isHidden = true // Export...
-        
+        statusItem.menu!.item(at: count - 4)?.isHidden = false // Export...
         
         for session in sessions.getAll() {
             let newItem = NSMenuItem(title: session.title(), action: nil, keyEquivalent: "")
@@ -112,9 +111,9 @@ import CoreData
         var count = statusItem.menu!.items.count
         
         statusItem.menu!.item(at: 3)?.isHidden = true // separator
-        statusItem.menu!.item(at: count - 4)?.isHidden = true // Clear
-        statusItem.menu!.item(at: count - 5)?.isHidden = true // Export...
-        
+        statusItem.menu!.item(at: count - 3)?.isHidden = true // Clear
+        statusItem.menu!.item(at: count - 4)?.isHidden = true // Export...
+
         count -= numberOfItemsAfterLastSessionItem
 
         if count < 4 {

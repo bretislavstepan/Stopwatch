@@ -41,14 +41,14 @@
                         <action selector="finish:" target="Mh4-7D-t31" id="KEF-s7-Enl"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" hidden="YES" id="SHT-qo-tWE"/>
-                <menuItem title="Export..." hidden="YES" alternate="YES" id="GL4-OX-roo">
+                <menuItem isSeparatorItem="YES" id="SHT-qo-tWE"/>
+                <menuItem title="Export..." id="GL4-OX-roo">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="export:" target="Mh4-7D-t31" id="zsT-zh-Zbw"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Clear" hidden="YES" id="a11-CC-2Y1">
+                <menuItem title="Clear" id="a11-CC-2Y1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="clear:" target="Mh4-7D-t31" id="WBl-6l-Ty7"/>
