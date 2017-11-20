@@ -42,6 +42,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" hidden="YES" id="SHT-qo-tWE"/>
+                <menuItem title="Export..." hidden="YES" alternate="YES" id="GL4-OX-roo">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="export:" target="Mh4-7D-t31" id="zsT-zh-Zbw"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Clear" hidden="YES" id="a11-CC-2Y1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

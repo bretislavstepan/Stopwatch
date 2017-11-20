@@ -18,7 +18,7 @@ import CoreData
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let stopwatch = Stopwatch()
-    let numberOfItemsAfterLastSessionItem = 4
+    let numberOfItemsAfterLastSessionItem = 5
     var timer: Timer?
     var sessions: Sessions!
 
@@ -98,6 +98,8 @@ import CoreData
         
         statusItem.menu!.item(at: 3)?.isHidden = false // separator
         statusItem.menu!.item(at: count - 3)?.isHidden = false // Clear
+        statusItem.menu!.item(at: count - 4)?.isHidden = true // Export...
+        
         
         for session in sessions.getAll() {
             let newItem = NSMenuItem(title: session.title(), action: nil, keyEquivalent: "")
@@ -111,7 +113,8 @@ import CoreData
         
         statusItem.menu!.item(at: 3)?.isHidden = true // separator
         statusItem.menu!.item(at: count - 4)?.isHidden = true // Clear
-
+        statusItem.menu!.item(at: count - 5)?.isHidden = true // Export...
+        
         count -= numberOfItemsAfterLastSessionItem
 
         if count < 4 {
@@ -141,4 +144,16 @@ import CoreData
         }
     }
 
+    @IBAction func export(_ sender: NSMenuItem) {
+        let panel = NSSavePanel();
+        panel.allowedFileTypes = ["csv"]
+        panel.allowsOtherFileTypes = false
+        panel.begin { (result) -> Void in
+            if result == NSApplication.ModalResponse.OK {
+                let exporter = CsvExporter()
+                exporter.write(self.sessions.getAll(), to: panel.url!)
+            }
+        }
+    }
+    
 }

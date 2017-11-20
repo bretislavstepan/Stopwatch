@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA4AD4EF1FC0CDE300CEA968 /* SessionMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AD4EE1FC0CDE300CEA968 /* SessionMO.swift */; };
+		BA708BA91FC348F20061EE14 /* CsvExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA708BA81FC348F20061EE14 /* CsvExporter.swift */; };
 		BAB5643F1FBD94BF0020A5FA /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5643E1FBD94BF0020A5FA /* Sessions.swift */; };
 		BADE309B1FBB77E700977F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE309A1FBB77E700977F2C /* AppDelegate.swift */; };
 		BADE309E1FBB77E700977F2C /* Stopwatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BADE309C1FBB77E700977F2C /* Stopwatch.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		BA4AD4EE1FC0CDE300CEA968 /* SessionMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMO.swift; sourceTree = "<group>"; };
+		BA708BA81FC348F20061EE14 /* CsvExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvExporter.swift; sourceTree = "<group>"; };
 		BAB5643E1FBD94BF0020A5FA /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		BADE30971FBB77E700977F2C /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADE309A1FBB77E700977F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		BADE30991FBB77E700977F2C /* Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
+				BA708BA81FC348F20061EE14 /* CsvExporter.swift */,
 				BADE309A1FBB77E700977F2C /* AppDelegate.swift */,
 				BADE30B91FBB8D3700977F2C /* StatusMenuController.swift */,
 				BAB5643E1FBD94BF0020A5FA /* Sessions.swift */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA4AD4EF1FC0CDE300CEA968 /* SessionMO.swift in Sources */,
+				BA708BA91FC348F20061EE14 /* CsvExporter.swift in Sources */,
 				BADE30BA1FBB8D3700977F2C /* StatusMenuController.swift in Sources */,
 				BAFF49BA1FBCE10C009E8F3C /* TimeInterval.swift in Sources */,
 				BAB5643F1FBD94BF0020A5FA /* Sessions.swift in Sources */,
