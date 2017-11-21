@@ -16,6 +16,7 @@
 		BADE30A31FBB77E700977F2C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADE30A11FBB77E700977F2C /* MainMenu.xib */; };
 		BADE30AF1FBB77E700977F2C /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE30AE1FBB77E700977F2C /* StopwatchTests.swift */; };
 		BADE30BA1FBB8D3700977F2C /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE30B91FBB8D3700977F2C /* StatusMenuController.swift */; };
+		BAE09FBE1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE09FBD1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift */; };
 		BAFF49B81FBB93A5009E8F3C /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF49B71FBB93A5009E8F3C /* Stopwatch.swift */; };
 		BAFF49BA1FBCE10C009E8F3C /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF49B91FBCE10C009E8F3C /* TimeInterval.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		BADE30AE1FBB77E700977F2C /* StopwatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
 		BADE30B01FBB77E700977F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADE30B91FBB8D3700977F2C /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		BAE09FBD1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuControllerHandleSleepWake.swift; sourceTree = "<group>"; };
 		BAFF49B71FBB93A5009E8F3C /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		BAFF49B91FBCE10C009E8F3C /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 				BA708BA81FC348F20061EE14 /* CsvExporter.swift */,
 				BADE309A1FBB77E700977F2C /* AppDelegate.swift */,
 				BADE30B91FBB8D3700977F2C /* StatusMenuController.swift */,
+				BAE09FBD1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift */,
 				BAB5643E1FBD94BF0020A5FA /* Sessions.swift */,
 				BAFF49B71FBB93A5009E8F3C /* Stopwatch.swift */,
 				BADE309F1FBB77E700977F2C /* Assets.xcassets */,
@@ -219,6 +222,7 @@
 				BA708BA91FC348F20061EE14 /* CsvExporter.swift in Sources */,
 				BADE30BA1FBB8D3700977F2C /* StatusMenuController.swift in Sources */,
 				BAFF49BA1FBCE10C009E8F3C /* TimeInterval.swift in Sources */,
+				BAE09FBE1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift in Sources */,
 				BAB5643F1FBD94BF0020A5FA /* Sessions.swift in Sources */,
 				BADE309B1FBB77E700977F2C /* AppDelegate.swift in Sources */,
 				BADE309E1FBB77E700977F2C /* Stopwatch.xcdatamodeld in Sources */,

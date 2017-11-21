@@ -1,21 +1,16 @@
 //
-//  StatusMenuController.swift
-//  Stopwatch
-//
-//  Created by Břetislav Štěpán on 14.11.17.
-//  Copyright © 2017 Břetislav Štěpán. All rights reserved.
+//  Copyright © 2017 Břetislav Štěpán.
+//  Licensed under MIT
 //
 
 import Cocoa
 import CoreData
 
 @objcMembers class StatusMenuController: NSObject {
-
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var finishMenuItem: NSMenuItem!
     @IBOutlet weak var startMenuItem: NSMenuItem!
     @IBOutlet weak var clearMenuItem: NSMenuItem!
-    
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let stopwatch = Stopwatch()
     let numberOfItemsAfterLastSessionItem = 5
@@ -27,6 +22,8 @@ import CoreData
         let managedObjectContext = delegate.persistentContainer.viewContext
         sessions = Sessions(context: managedObjectContext)
         statusItem.menu = statusMenu
+        
+        registerForSleepWakeNotifications()
         updateDisplay()
         appendSessionsToMenuItems()
     }
@@ -35,7 +32,6 @@ import CoreData
         stopwatch.toggle()
         updateDisplay()
         if stopwatch.isRunning {
-
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateDisplay), userInfo: nil, repeats: true)
         }
         else {
@@ -61,7 +57,7 @@ import CoreData
         _ = sessions.create(date: Date(), duration: Float(stopwatch.getDuration()), label: label)
         sessions.saveChanges()
         appendSessionsToMenuItems()
-        stopwatch.reset()
+        stopwatch.stop()
     }
     
     @IBAction func clear(_ sender: NSMenuItem) {
@@ -154,5 +150,4 @@ import CoreData
             }
         }
     }
-    
 }

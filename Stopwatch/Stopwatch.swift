@@ -1,18 +1,16 @@
 //
-//  Stopwatch.swift
-//  Stopwatch
-//
-//  Created by Břetislav Štěpán on 14.11.17.
-//  Copyright © 2017 Břetislav Štěpán. All rights reserved.
+//  Copyright © 2017 Břetislav Štěpán.
+//  Licensed under MIT
 //
 
-import Cocoa
+import Foundation
 
-class Stopwatch: NSObject {
+class Stopwatch {
 
     private var duration: TimeInterval = 0
     
     public private(set) var isRunning = false
+    public private(set) var isActive = false
     
     private var timer = Timer()
     
@@ -24,6 +22,7 @@ class Stopwatch: NSObject {
         }
         else {
             startTime = Date()
+            isActive = true
         }
 
         isRunning = !isRunning
@@ -32,6 +31,13 @@ class Stopwatch: NSObject {
     func reset() {
         duration = 0
         startTime = Date()
+    }
+    
+    func stop() {
+        isActive = false
+        isRunning = false
+        duration = 0
+        startTime = nil
     }
     
     func getDuration() -> TimeInterval {
