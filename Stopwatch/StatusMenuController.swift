@@ -22,7 +22,6 @@ import CoreData
         let managedObjectContext = delegate.persistentContainer.viewContext
         sessions = Sessions(context: managedObjectContext)
         statusItem.menu = statusMenu
-        
         registerForSleepWakeNotifications()
         updateDisplay()
         appendSessionsToMenuItems()
@@ -123,20 +122,19 @@ import CoreData
 
     private func getLabel(title: String, question: String) -> String {
         let msg = NSAlert()
-        msg.addButton(withTitle: "OK")      // 1st button
+        msg.addButton(withTitle: "Save session")
         msg.messageText = title
         msg.informativeText = question
         
-        let txt = NSTextField(frame: NSRect(x: 0, y: 0, width: 200, height: 24))
-        
+        let txt = NSTextField(frame: NSRect(x: 0, y: 0, width: 300, height: 24))
+        txt.isSelectable = true
         msg.accessoryView = txt
+
         let response: NSApplication.ModalResponse = msg.runModal()
-        
-        if (response == NSApplication.ModalResponse.alertFirstButtonReturn) {
+        if response == NSApplication.ModalResponse.alertFirstButtonReturn {
             return txt.stringValue
-        } else {
-            return ""
         }
+        return ""
     }
 
     @IBAction func export(_ sender: NSMenuItem) {
