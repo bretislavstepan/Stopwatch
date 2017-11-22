@@ -13,7 +13,7 @@ import CoreData
     @IBOutlet weak var clearMenuItem: NSMenuItem!
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let stopwatch = Stopwatch()
-    let numberOfItemsAfterLastSessionItem = 5
+    let numberOfItemsAfterLastSessionItem = 6
     var timer: Timer?
     var sessions: Sessions!
 
@@ -27,6 +27,10 @@ import CoreData
         appendSessionsToMenuItems()
     }
     
+    @IBAction func aboutStopwatchClicked(_ sender: NSMenuItem) {
+        NSApplication.shared.orderFrontStandardAboutPanel()
+    }
+
     @IBAction func toggle(_ sender: NSMenuItem) {
         stopwatch.toggle()
         updateDisplay()
@@ -92,8 +96,8 @@ import CoreData
         let count = statusItem.menu!.items.count
         
         statusItem.menu!.item(at: 3)?.isHidden = false // separator
-        statusItem.menu!.item(at: count - 3)?.isHidden = false // Clear
-        statusItem.menu!.item(at: count - 4)?.isHidden = false // Export...
+        statusItem.menu!.item(at: count - 4)?.isHidden = false // Clear
+        statusItem.menu!.item(at: count - 5)?.isHidden = false // Export...
         
         for session in sessions.getAll() {
             let newItem = NSMenuItem(title: session.title(), action: nil, keyEquivalent: "")
@@ -106,8 +110,8 @@ import CoreData
         var count = statusItem.menu!.items.count
         
         statusItem.menu!.item(at: 3)?.isHidden = true // separator
-        statusItem.menu!.item(at: count - 3)?.isHidden = true // Clear
-        statusItem.menu!.item(at: count - 4)?.isHidden = true // Export...
+        statusItem.menu!.item(at: count - 4)?.isHidden = true // Clear
+        statusItem.menu!.item(at: count - 5)?.isHidden = true // Export...
 
         count -= numberOfItemsAfterLastSessionItem
 

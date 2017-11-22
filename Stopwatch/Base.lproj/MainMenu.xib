@@ -55,6 +55,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="EiX-fA-K7A"/>
+                <menuItem title="About Stopwatch" id="9v6-z5-50G">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="aboutStopwatchClicked:" target="Mh4-7D-t31" id="8tw-65-FPP"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit" id="7vg-dY-8Ae">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

@@ -25,7 +25,8 @@
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2017 Břetislav Štěpán. Licensed under MIT</string>
+	<string>Copyright © 2017 Břetislav Štěpán.
+Licensed under MIT.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
