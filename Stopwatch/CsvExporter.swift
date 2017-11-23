@@ -25,7 +25,7 @@ class CsvExporter {
     
         let csvArray = objects.map({object in
             (attribs
-                .map({((object.value(forKey: $0) ?? "NIL") as! NSManagedObject).description})
+                .map({((object.value(forKey: $0) ?? "NIL") as AnyObject).description})
                 .reduce("", {$0 + "," + $1})
             as NSString)
                 .substring(from: 1) + "\n"
