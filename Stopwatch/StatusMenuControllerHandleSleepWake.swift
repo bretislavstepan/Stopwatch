@@ -20,12 +20,16 @@ extension StatusMenuController {
     }
     
     func onSleep() {
+        guard UserDefaults.standard.bool(forKey: "pauseOnSleep") else { return }
+
         if stopwatch.isActive && stopwatch.isRunning {
             stopwatch.toggle()
         }
     }
     
     func onWake() {
+        guard UserDefaults.standard.bool(forKey: "pauseOnSleep") else { return }
+
         if stopwatch.isActive && !stopwatch.isRunning {
             stopwatch.toggle()
         }

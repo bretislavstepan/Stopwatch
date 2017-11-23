@@ -41,7 +41,7 @@
                         <action selector="finish:" target="Mh4-7D-t31" id="KEF-s7-Enl"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="SHT-qo-tWE"/>
+                <menuItem isSeparatorItem="YES" id="yVd-1S-Bjd"/>
                 <menuItem title="Export..." id="GL4-OX-roo">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -55,6 +55,11 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="EiX-fA-K7A"/>
+                <menuItem title="Preferences..." keyEquivalent="," id="bgQ-Sg-dgE">
+                    <connections>
+                        <action selector="preferencesClicked:" target="Mh4-7D-t31" id="diq-hi-zrs"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="About Stopwatch" id="9v6-z5-50G">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
