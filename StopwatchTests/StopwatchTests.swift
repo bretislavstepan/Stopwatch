@@ -1,9 +1,6 @@
 //
-//  StopwatchTests.swift
-//  StopwatchTests
-//
-//  Created by Břetislav Štěpán on 14.11.17.
-//  Copyright © 2017 Břetislav Štěpán. All rights reserved.
+//  Copyright © 2017 Břetislav Štěpán.
+//  Licensed under MIT.
 //
 
 import XCTest
@@ -13,29 +10,43 @@ class StopwatchTests: XCTestCase {
 
     let stopwatch = Stopwatch()
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func testMeasuring() {
-        XCTAssertEqual(0, stopwatch.duration)
-        stopwatch.start();
-       
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        XCTAssertEqual(false, stopwatch.isActive)
+
+        XCTAssertEqual(0, stopwatch.getDuration())
+        stopwatch.toggle() // START
+        XCTAssertEqual(true, stopwatch.isRunning)
+        XCTAssertEqual(true, stopwatch.isActive)
+
+        sleep(5)
+
+        stopwatch.toggle() // PAUSE
+        XCTAssertEqual(false, stopwatch.isRunning)
+        XCTAssertEqual(true, stopwatch.isActive)
+
+        sleep(5)
+
+        stopwatch.toggle() // CONTINUE
+        XCTAssertEqual(true, stopwatch.isRunning)
+        XCTAssertEqual(true, stopwatch.isActive)
+
+        sleep(5)
+
+        stopwatch.reset()
+        XCTAssertEqual(true, stopwatch.getDuration() < 1)
+        XCTAssertEqual(true, stopwatch.isRunning)
+        XCTAssertEqual(true, stopwatch.isActive)
+
+        sleep(5)
+
+        stopwatch.toggle() // pause
+        XCTAssertEqual(true, stopwatch.getDuration() > 0)
+
+        stopwatch.stop()
+
+        XCTAssertEqual(0, stopwatch.getDuration())
+        XCTAssertEqual(false, stopwatch.isRunning)
+        XCTAssertEqual(false, stopwatch.isActive)
     }
     
 }
