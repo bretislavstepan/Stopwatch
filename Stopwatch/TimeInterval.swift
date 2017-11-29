@@ -1,9 +1,6 @@
 //
-//  TimeInterval.swift
-//  Stopwatch
-//
-//  Created by Břetislav Štěpán on 15.11.17.
-//  Copyright © 2017 Břetislav Štěpán. All rights reserved.
+//  Copyright © 2017 Břetislav Štěpán.
+//  Licensed under MIT.
 //
 
 import Foundation
