@@ -1,6 +1,6 @@
 # Stopwatch
 
-Simple app for tracking time on side projects.
+Simple app for tracking time spent on side projects.
 
 ### Requirements
 
