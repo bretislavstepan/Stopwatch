@@ -2,11 +2,13 @@
 
 Simple app for tracking time spent on side projects.
 
+![](./Assets/screenshot.png?raw=true)
+
 ### Requirements
 
-* >= macOS 10.13 High Sierra 
+* macOS 10.13 High Sierra 
 
-### Authors
+### Author
 
 * [Břetislav Štěpán](mailto:info@bretislavstepan.cz)
 
