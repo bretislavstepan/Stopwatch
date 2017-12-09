@@ -4,6 +4,10 @@ Simple app for tracking time spent on side projects.
 
 ![](./Assets/screenshot.png?raw=true)
 
+### Download
+
+* [Latest version](https://github.com/bretislavstepan/stopwatch/releases/latest)
+
 ### Requirements
 
 * macOS 10.13 High Sierra 
