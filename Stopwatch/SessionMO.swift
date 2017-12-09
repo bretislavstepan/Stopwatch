@@ -34,7 +34,7 @@ extension SessionMO {
     }
     
     func formattedTimeInterval() -> String {
-        return TimeInterval(duration).format()
+        return TimeInterval(duration).formatted
     }
 
 }

@@ -7,18 +7,19 @@ import Foundation
 
 class Stopwatch {
 
-    private var duration: TimeInterval = 0
-    
+    private var startTime = Date()
+    private var counter: TimeInterval = 0
     public private(set) var isRunning = false
     public private(set) var isActive = false
-    
-    private var timer = Timer()
-    
-    private var startTime: Date?
-    
+    public var duration: TimeInterval {
+        get {
+            return isRunning ? counter - startTime.timeIntervalSinceNow : counter
+        }
+    }
+
     func toggle() {
         if isRunning {
-            duration -= startTime?.timeIntervalSinceNow ?? 0
+            counter -= startTime.timeIntervalSinceNow
         }
         else {
             startTime = Date()
@@ -29,22 +30,14 @@ class Stopwatch {
     }
 
     func reset() {
-        duration = 0
+        counter = 0
         startTime = Date()
     }
     
     func stop() {
         isActive = false
         isRunning = false
-        duration = 0
-        startTime = nil
-    }
-    
-    func getDuration() -> TimeInterval {
-        if isRunning {
-            return duration - (startTime?.timeIntervalSinceNow ?? 0)
-        }
-        return duration
+        counter = 0
     }
     
 }

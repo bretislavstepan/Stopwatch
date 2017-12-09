@@ -6,14 +6,14 @@
 import XCTest
 @testable import Stopwatch
 
-class StopwatchTests: XCTestCase {
+class StopwatchTest: XCTestCase {
 
     let stopwatch = Stopwatch()
     
     func testMeasuring() {
         XCTAssertEqual(false, stopwatch.isActive)
 
-        XCTAssertEqual(0, stopwatch.getDuration())
+        XCTAssertEqual(0, stopwatch.duration)
         stopwatch.toggle() // START
         XCTAssertEqual(true, stopwatch.isRunning)
         XCTAssertEqual(true, stopwatch.isActive)
@@ -33,18 +33,18 @@ class StopwatchTests: XCTestCase {
         sleep(5)
 
         stopwatch.reset()
-        XCTAssertEqual(true, stopwatch.getDuration() < 1)
+        XCTAssertEqual(true, stopwatch.duration < 1)
         XCTAssertEqual(true, stopwatch.isRunning)
         XCTAssertEqual(true, stopwatch.isActive)
 
         sleep(5)
 
         stopwatch.toggle() // pause
-        XCTAssertEqual(true, stopwatch.getDuration() > 0)
+        XCTAssertEqual(true, stopwatch.duration > 0)
 
         stopwatch.stop()
 
-        XCTAssertEqual(0, stopwatch.getDuration())
+        XCTAssertEqual(0, stopwatch.duration)
         XCTAssertEqual(false, stopwatch.isRunning)
         XCTAssertEqual(false, stopwatch.isActive)
     }

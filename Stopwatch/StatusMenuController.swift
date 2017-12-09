@@ -11,10 +11,9 @@ import CoreData
     @IBOutlet weak var finishMenuItem: NSMenuItem!
     @IBOutlet weak var startMenuItem: NSMenuItem!
     @IBOutlet weak var clearMenuItem: NSMenuItem!
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    let stopwatch = Stopwatch()
-    let numberOfItemsAfterLastSessionItem = 7
-    var timer: Timer?
+    var statusItem: NSStatusItem!
+    var stopwatch: Stopwatch!
+    var timer: Timer!
     var sessions: Sessions!
     var preferencesController : PreferencesController?
 
@@ -22,15 +21,16 @@ import CoreData
         let delegate = NSApplication.shared.delegate as! AppDelegate
         let managedObjectContext = delegate.persistentContainer.viewContext
         sessions = Sessions(context: managedObjectContext)
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem.menu = statusMenu
+        stopwatch = Stopwatch()
         registerForSleepWakeNotifications()
         updateDisplay()
         appendSessionsToMenuItems()
     }
     
     @IBAction func preferencesClicked(_ sender: NSMenuItem) {
-        preferencesController = PreferencesController(windowNibName: NSNib.Name(rawValue: "PreferencesController"))
-        preferencesController?.showWindow(self)
+        PreferencesController(windowNibName: NSNib.Name(rawValue: "PreferencesController")).showWindow(self)
     }
 
     @IBAction func aboutStopwatchClicked(_ sender: NSMenuItem) {
@@ -44,9 +44,7 @@ import CoreData
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateDisplay), userInfo: nil, repeats: true)
         }
         else {
-            if let timer = timer {
-                timer.invalidate()
-            }
+            timer.invalidate()
         }
         
         enableMenuItems()
@@ -63,7 +61,7 @@ import CoreData
         
         let label = getLabel(title: "Stopwatch", question: "Enter the session label:")
         
-        _ = sessions.create(date: Date(), duration: Float(stopwatch.getDuration()), label: label)
+        _ = sessions.create(date: Date(), duration: Float(stopwatch.duration), label: label)
         sessions.saveChanges()
         appendSessionsToMenuItems()
         stopwatch.stop()
@@ -82,30 +80,31 @@ import CoreData
     }
     
     @objc func updateDisplay() {
-        statusItem.title = stopwatch.getDuration().format()
+        statusItem.title = stopwatch.duration.formatted
         enableMenuItems()
     }
     
     private func enableMenuItems() {
-        finishMenuItem.isEnabled = stopwatch.getDuration() > 0
+        finishMenuItem.isEnabled = stopwatch.duration > 0
         startMenuItem.title = stopwatch.isRunning ? "Pause" :
-            stopwatch.getDuration() == 0 ? "Start" : "Continue"
+            stopwatch.duration == 0 ? "Start" : "Continue"
     }
     
     private func appendSessionsToMenuItems() {
         clearSessionsFromMenuItems()
-        
-        if (sessions.getAll().count == 0) {
+
+        let sessions = self.sessions.getAll()
+        if sessions.isEmpty {
             return
         }
         
         let count = statusItem.menu!.items.count
         
-        statusItem.menu!.item(at: 3)?.isHidden = false // separator
-        statusItem.menu!.item(at: count - 5)?.isHidden = false // Clear
-        statusItem.menu!.item(at: count - 6)?.isHidden = false // Export...
+        statusItem.menu!.item(at: Constants.Index.separator)?.isHidden = false
+        statusItem.menu!.item(at: count - Constants.PositionFromBottom.clearItem)?.isHidden = false
+        statusItem.menu!.item(at: count - Constants.PositionFromBottom.exportItem)?.isHidden = false // Export...
         
-        for session in sessions.getAll() {
+        for session in sessions {
             let newItem = NSMenuItem(title: session.title(), action: nil, keyEquivalent: "")
             newItem.isEnabled = false
             statusItem.menu?.insertItem(newItem, at: 4)
@@ -113,13 +112,14 @@ import CoreData
     }
     
     private func clearSessionsFromMenuItems() {
-        var count = statusItem.menu!.items.count
+        let menu = statusItem.menu!
+        var count = menu.items.count
         
-        statusItem.menu!.item(at: 3)?.isHidden = true // separator
-        statusItem.menu!.item(at: count - 5)?.isHidden = true // Clear
-        statusItem.menu!.item(at: count - 6)?.isHidden = true // Export...
+        menu.item(at: Constants.Index.separator)?.isHidden = true
+        menu.item(at: count - Constants.PositionFromBottom.clearItem)?.isHidden = true
+        menu.item(at: count - Constants.PositionFromBottom.exportItem)?.isHidden = true
 
-        count -= numberOfItemsAfterLastSessionItem
+        count -= Constants.menuItemsAfterLastSession
 
         if count < 4 {
             return
@@ -141,10 +141,7 @@ import CoreData
         msg.accessoryView = txt
 
         let response: NSApplication.ModalResponse = msg.runModal()
-        if response == NSApplication.ModalResponse.alertFirstButtonReturn {
-            return txt.stringValue
-        }
-        return ""
+        return response == NSApplication.ModalResponse.alertFirstButtonReturn ? txt.stringValue : ""
     }
 
     @IBAction func export(_ sender: NSMenuItem) {

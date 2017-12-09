@@ -71,7 +71,6 @@ class Sessions {
         do {
             try context.save()
         } catch let error as NSError {
-            // failure
             print(error)
         }
     }

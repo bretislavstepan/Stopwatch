@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA4873A01FD1E4CD00DB7B3A /* export.csv in Resources */ = {isa = PBXBuildFile; fileRef = BA48739F1FD1E4CD00DB7B3A /* export.csv */; };
+		BA4873A21FD1E7B700DB7B3A /* XCTestCaseWithMemoryManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4873A11FD1E7B700DB7B3A /* XCTestCaseWithMemoryManagedObjectContext.swift */; };
 		BA4AD4EF1FC0CDE300CEA968 /* SessionMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AD4EE1FC0CDE300CEA968 /* SessionMO.swift */; };
 		BA708BA91FC348F20061EE14 /* CsvExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA708BA81FC348F20061EE14 /* CsvExporter.swift */; };
+		BA822C601FD0A5D50092F198 /* CsvExporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA822C5F1FD0A5D50092F198 /* CsvExporterTest.swift */; };
 		BAB5643F1FBD94BF0020A5FA /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB5643E1FBD94BF0020A5FA /* Sessions.swift */; };
+		BABCFA0D1FDB48B600428523 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCFA0C1FDB48B600428523 /* Constants.swift */; };
 		BADE309B1FBB77E700977F2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE309A1FBB77E700977F2C /* AppDelegate.swift */; };
 		BADE309E1FBB77E700977F2C /* Stopwatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BADE309C1FBB77E700977F2C /* Stopwatch.xcdatamodeld */; };
 		BADE30A01FBB77E700977F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADE309F1FBB77E700977F2C /* Assets.xcassets */; };
 		BADE30A31FBB77E700977F2C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BADE30A11FBB77E700977F2C /* MainMenu.xib */; };
-		BADE30AF1FBB77E700977F2C /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE30AE1FBB77E700977F2C /* StopwatchTests.swift */; };
+		BADE30AF1FBB77E700977F2C /* StopwatchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE30AE1FBB77E700977F2C /* StopwatchTest.swift */; };
 		BADE30BA1FBB8D3700977F2C /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE30B91FBB8D3700977F2C /* StatusMenuController.swift */; };
 		BAE09FBE1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE09FBD1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift */; };
 		BAE09FC51FC7618A00E557B0 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE09FC31FC7618A00E557B0 /* PreferencesController.swift */; };
@@ -34,9 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA48739F1FD1E4CD00DB7B3A /* export.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = export.csv; sourceTree = "<group>"; };
+		BA4873A11FD1E7B700DB7B3A /* XCTestCaseWithMemoryManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseWithMemoryManagedObjectContext.swift; sourceTree = "<group>"; };
 		BA4AD4EE1FC0CDE300CEA968 /* SessionMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMO.swift; sourceTree = "<group>"; };
 		BA708BA81FC348F20061EE14 /* CsvExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvExporter.swift; sourceTree = "<group>"; };
+		BA822C5F1FD0A5D50092F198 /* CsvExporterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsvExporterTest.swift; sourceTree = "<group>"; };
 		BAB5643E1FBD94BF0020A5FA /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
+		BABCFA0C1FDB48B600428523 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BADE30971FBB77E700977F2C /* Stopwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stopwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADE309A1FBB77E700977F2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BADE309D1FBB77E700977F2C /* Stopwatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stopwatch.xcdatamodel; sourceTree = "<group>"; };
@@ -45,7 +53,7 @@
 		BADE30A41FBB77E700977F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADE30A51FBB77E700977F2C /* Stopwatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Stopwatch.entitlements; sourceTree = "<group>"; };
 		BADE30AA1FBB77E700977F2C /* StopwatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StopwatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BADE30AE1FBB77E700977F2C /* StopwatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
+		BADE30AE1FBB77E700977F2C /* StopwatchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTest.swift; sourceTree = "<group>"; };
 		BADE30B01FBB77E700977F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BADE30B91FBB8D3700977F2C /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		BAE09FBD1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuControllerHandleSleepWake.swift; sourceTree = "<group>"; };
@@ -94,11 +102,12 @@
 		BADE30991FBB77E700977F2C /* Stopwatch */ = {
 			isa = PBXGroup;
 			children = (
+				BADE309A1FBB77E700977F2C /* AppDelegate.swift */,
 				BAE09FC31FC7618A00E557B0 /* PreferencesController.swift */,
 				BAE09FC41FC7618A00E557B0 /* PreferencesController.xib */,
 				BA708BA81FC348F20061EE14 /* CsvExporter.swift */,
-				BADE309A1FBB77E700977F2C /* AppDelegate.swift */,
 				BADE30B91FBB8D3700977F2C /* StatusMenuController.swift */,
+				BABCFA0C1FDB48B600428523 /* Constants.swift */,
 				BAE09FBD1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift */,
 				BAB5643E1FBD94BF0020A5FA /* Sessions.swift */,
 				BAFF49B71FBB93A5009E8F3C /* Stopwatch.swift */,
@@ -116,8 +125,11 @@
 		BADE30AD1FBB77E700977F2C /* StopwatchTests */ = {
 			isa = PBXGroup;
 			children = (
-				BADE30AE1FBB77E700977F2C /* StopwatchTests.swift */,
+				BADE30AE1FBB77E700977F2C /* StopwatchTest.swift */,
 				BADE30B01FBB77E700977F2C /* Info.plist */,
+				BA822C5F1FD0A5D50092F198 /* CsvExporterTest.swift */,
+				BA4873A11FD1E7B700DB7B3A /* XCTestCaseWithMemoryManagedObjectContext.swift */,
+				BA48739F1FD1E4CD00DB7B3A /* export.csv */,
 			);
 			path = StopwatchTests;
 			sourceTree = "<group>";
@@ -215,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4873A01FD1E4CD00DB7B3A /* export.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA4AD4EF1FC0CDE300CEA968 /* SessionMO.swift in Sources */,
+				BABCFA0D1FDB48B600428523 /* Constants.swift in Sources */,
 				BA708BA91FC348F20061EE14 /* CsvExporter.swift in Sources */,
 				BADE30BA1FBB8D3700977F2C /* StatusMenuController.swift in Sources */,
 				BAFF49BA1FBCE10C009E8F3C /* TimeInterval.swift in Sources */,
@@ -242,7 +256,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BADE30AF1FBB77E700977F2C /* StopwatchTests.swift in Sources */,
+				BA4873A21FD1E7B700DB7B3A /* XCTestCaseWithMemoryManagedObjectContext.swift in Sources */,
+				BADE30AF1FBB77E700977F2C /* StopwatchTest.swift in Sources */,
+				BA822C601FD0A5D50092F198 /* CsvExporterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
