@@ -23,6 +23,7 @@
 		BAE09FBE1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE09FBD1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift */; };
 		BAE09FC51FC7618A00E557B0 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE09FC31FC7618A00E557B0 /* PreferencesController.swift */; };
 		BAE09FC61FC7618A00E557B0 /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE09FC41FC7618A00E557B0 /* PreferencesController.xib */; };
+		BAE64B9F1FE1CB52000AC86F /* SessionMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE64B9E1FE1CB52000AC86F /* SessionMenuItem.swift */; };
 		BAFF49B81FBB93A5009E8F3C /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF49B71FBB93A5009E8F3C /* Stopwatch.swift */; };
 		BAFF49BA1FBCE10C009E8F3C /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF49B91FBCE10C009E8F3C /* TimeInterval.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		BAE09FBD1FC4A91E00E557B0 /* StatusMenuControllerHandleSleepWake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuControllerHandleSleepWake.swift; sourceTree = "<group>"; };
 		BAE09FC31FC7618A00E557B0 /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
 		BAE09FC41FC7618A00E557B0 /* PreferencesController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
+		BAE64B9E1FE1CB52000AC86F /* SessionMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMenuItem.swift; sourceTree = "<group>"; };
 		BAFF49B71FBB93A5009E8F3C /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		BAFF49B91FBCE10C009E8F3C /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				BADE309C1FBB77E700977F2C /* Stopwatch.xcdatamodeld */,
 				BAFF49B91FBCE10C009E8F3C /* TimeInterval.swift */,
 				BA4AD4EE1FC0CDE300CEA968 /* SessionMO.swift */,
+				BAE64B9E1FE1CB52000AC86F /* SessionMenuItem.swift */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE64B9F1FE1CB52000AC86F /* SessionMenuItem.swift in Sources */,
 				BA4AD4EF1FC0CDE300CEA968 /* SessionMO.swift in Sources */,
 				BABCFA0D1FDB48B600428523 /* Constants.swift in Sources */,
 				BA708BA91FC348F20061EE14 /* CsvExporter.swift in Sources */,

@@ -18,5 +18,17 @@ extension TimeInterval {
             return formatter.string(from: self) ?? ""
         }
     }
-    
+
+    public var formattedForGitlab: String {
+        get {
+            let formatter = DateComponentsFormatter()
+
+            formatter.allowedUnits = [.hour, .minute]
+            formatter.unitsStyle = .abbreviated
+            let time = formatter.string(from: self) ?? ""
+
+            return "\\spend " + time
+        }
+    }
+
 }

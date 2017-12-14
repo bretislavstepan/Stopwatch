@@ -97,17 +97,22 @@ import CoreData
         if sessions.isEmpty {
             return
         }
+
+        guard let menu = statusItem.menu else { return }
+
+        let count = menu.items.count
         
-        let count = statusItem.menu!.items.count
-        
-        statusItem.menu!.item(at: Constants.Index.separator)?.isHidden = false
-        statusItem.menu!.item(at: count - Constants.PositionFromBottom.clearItem)?.isHidden = false
-        statusItem.menu!.item(at: count - Constants.PositionFromBottom.exportItem)?.isHidden = false // Export...
+        menu.item(at: Constants.Index.separator)?.isHidden = false
+        menu.item(at: count - Constants.PositionFromBottom.clearItem)?.isHidden = false
+        menu.item(at: count - Constants.PositionFromBottom.exportItem)?.isHidden = false // Export...
         
         for session in sessions {
-            let newItem = NSMenuItem(title: session.title(), action: nil, keyEquivalent: "")
-            newItem.isEnabled = false
-            statusItem.menu?.insertItem(newItem, at: 4)
+            let item = SessionMenuItem()
+            item.sessionId = session.objectID
+            item.title = session.title()
+            item.target = self
+            item.action = #selector(copySpendTime(_:))
+            menu.insertItem(item, at: 4)
         }
     }
     
@@ -155,4 +160,32 @@ import CoreData
             }
         }
     }
+
+    @objc func copySpendTime(_ sender: SessionMenuItem) {
+        guard let id = sender.sessionId else { return }
+        guard let session = sessions.getById(id) else { return }
+        let spentTime = TimeInterval(Double(session.duration)).formattedForGitlab
+
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
+        pasteboard.setString(spentTime, forType: NSPasteboard.PasteboardType.string)
+
+        showNotification(title: "Stopwatch",
+                         subtitle: spentTime,
+                         informativeText: "Spent time has been copied to the Pasteboard.")
+    }
+}
+
+extension StatusMenuController: NSUserNotificationCenterDelegate {
+
+    func showNotification(title: String?, subtitle: String?, informativeText: String?) -> Void {
+        let notification = NSUserNotification()
+
+        notification.title = title
+        notification.subtitle = subtitle
+        notification.informativeText = informativeText
+
+        NSUserNotificationCenter.default.deliver(notification)
+    }
+
 }
