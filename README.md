@@ -1,8 +1,16 @@
 # Stopwatch
 
-Simple app for tracking time spent on side projects.
+An app for tracking time spent on ~~side~~ projects.
 
 ![](./Assets/screenshot.png?raw=true)
+
+### Features
+
+* Runs in the macOS status bar.
+* Auto pause during sleep, running screensaver or locked screen.
+* Labeling of finished sessions.
+* Export to a CSV file.
+* By clicking on the stored session you copy the duration to the Pastebord in a Gitlab Qick Action format.
 
 ### Download
 

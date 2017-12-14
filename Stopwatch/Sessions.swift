@@ -25,7 +25,7 @@ class Sessions {
         return newItem
     }
     
-    func getById(id: NSManagedObjectID) -> SessionMO? {
+    func getById(_ id: NSManagedObjectID) -> SessionMO? {
         return context.object(with: id) as? SessionMO
     }
     
@@ -54,7 +54,7 @@ class Sessions {
     }
     
     func update(updatedPerson: SessionMO) {
-        if let session = getById(id: updatedPerson.objectID) {
+        if let session = getById(updatedPerson.objectID) {
             session.label = updatedPerson.label
             session.date = updatedPerson.date
             session.duration = updatedPerson.duration
@@ -62,7 +62,7 @@ class Sessions {
     }
     
     func delete(id: NSManagedObjectID) {
-        if let personToDelete = getById(id: id) {
+        if let personToDelete = getById(id) {
             context.delete(personToDelete)
         }
     }
