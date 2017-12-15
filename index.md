@@ -2,7 +2,7 @@
 
 An app for tracking time spent on ~~side~~ projects.
 
-![](./Assets/screenshot.png?raw=true)
+![](./images/screenshot.png?raw=true)
 
 ### Features
 
