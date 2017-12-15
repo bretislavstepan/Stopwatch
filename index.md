@@ -1,7 +1,3 @@
-# Stopwatch
-
-An app for tracking time spent on ~~side~~ projects.
-
 ![](./images/screenshot.png?raw=true)
 
 ### Features
@@ -24,10 +20,10 @@ An app for tracking time spent on ~~side~~ projects.
 
 * [Břetislav Štěpán](mailto:info@bretislavstepan.cz)
 
-## License
+### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+### Acknowledgments
 
 * Inspired by [João Moreno Thyme](https://github.com/joaomoreno/thyme) 
