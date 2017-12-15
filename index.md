@@ -16,10 +16,6 @@
 
 * macOS 10.13 High Sierra 
 
-### Author
-
-* [Břetislav Štěpán](mailto:info@bretislavstepan.cz)
-
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
